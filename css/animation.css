@@ -1,0 +1,200 @@
+/*-------------------------- ローディング --------------------------*/
+
+#loading {
+    position: fixed;
+    inset: 0;
+    background: #0F141A;
+    z-index: 9999;
+    padding: calc(50vh - 100px) calc(50vw - 1px);
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+#loading.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+  
+.line-wrapper {
+    position: relative;
+    bottom: 0;
+    height: 200px;
+    width: 2px;
+    overflow: hidden;
+}
+  
+.loading-line {
+    position: absolute;
+    bottom: 0;
+    width: 2px;
+    height: 200px;
+    background: linear-gradient(to bottom, #fff 0 50%, #8B8C87 50% 100%);
+    animation: dropShrink 1.8s ease forwards;
+}
+  
+@keyframes dropShrink {
+    0% {
+      height: 200px;
+      transform: translateY(0);
+    }
+    60% {
+      height: 140px;
+      transform: translateY(30px);
+    }
+    80% {
+      height: 80px;
+      transform: translateY(80px);
+    }
+    100% {
+      height: 0px;
+      transform: translateY(100px);
+    }
+}
+
+/*-------------------------- キービジュ上文字表示 --------------------------*/
+
+
+@keyframes blurFadeUp {
+    0% {
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+    
+.kv .top_logo .shizukuishi,
+.kv .top_logo img,
+.kv .top_logo .alphabet {
+    opacity: 0;
+}
+      
+.kv .top_logo.animate .shizukuishi {
+    animation: blurFadeUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+      
+.kv .top_logo.animate img {
+    animation: blurFadeUp 1.5s ease forwards;
+    animation-delay: 1.5s;
+}
+      
+.kv .top_logo.animate .alphabet {
+    animation: blurFadeUp 1s ease forwards;
+    animation-delay: 2.5s;
+}
+
+.kv .kv_title {
+    opacity: 0;
+}
+  
+.kv .kv_title.animate {
+    animation: blurFadeUp 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/*-------------------------- トップキービジュスライド --------------------------*/
+
+.top .kv_img .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    z-index: 1;
+    filter: blur(10px);
+    transform: scale(1.15);
+    transition: opacity 2s ease-in-out, transform 8s linear, filter 2s ease-in-out;
+    pointer-events: none;
+}
+  
+
+.top .kv_img .slide.active {
+    opacity: 1;
+    transform: scale(1.0);
+    filter: blur(0px);
+    z-index: 3;
+}
+
+.scroll-fadein {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+  }
+  
+.scroll-fadein.visible {
+    opacity: 1;
+}
+
+
+/*-------------------------- トップ以外キービジュ --------------------------*/
+
+.not-top .kv_img .slide {
+    animation: fadeZoomOnce 10s ease forwards;
+}
+
+@keyframes fadeZoomOnce {
+    0% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+
+/*-------------------------- メニュー表示 --------------------------*/
+
+
+@keyframes fadeOnly {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header_menu.active {
+    opacity: 0;
+    animation: fadeOnly 0.8s ease forwards;
+    animation-delay: 0s;
+    visibility: visible;
+}
+
+.header_menu.active .menu_logo {
+    animation: fadeOnly 0.8s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+.header_menu.active .menu_list a {
+    animation: fadeOnly 0.5s ease forwards;
+    opacity: 0;
+}
+
+.header_menu.active .menu_list .list_top li:nth-child(1) a { animation-delay: 0.85s; }
+.header_menu.active .menu_list .list_top li:nth-child(2) a { animation-delay: 0.95s; }
+.header_menu.active .menu_list .list_top li:nth-child(3) a { animation-delay: 1.05s; }
+
+.header_menu.active .menu_list .list_bottom li:nth-child(1) a { animation-delay: 1.15s; }
+.header_menu.active .menu_list .list_bottom li:nth-child(2) a { animation-delay: 1.25s; }
+.header_menu.active .menu_list .list_bottom li:nth-child(3) a { animation-delay: 1.35s; }
+.header_menu.active .menu_list .list_bottom li:nth-child(4) a { animation-delay: 1.45s; }
+
+.header_menu.active .menu_info .btn {
+    animation: fadeOnly 0.7s ease forwards;
+    animation-delay: 1.7s;
+    opacity: 0;
+}
+
+.header_menu.active .menu_info .call {
+    animation: fadeOnly 0.7s ease forwards;
+    animation-delay: 1.95s;
+    opacity: 0;
+}
+
+.header_menu.active .menu_info .address {
+    animation: fadeOnly 0.7s ease forwards;
+    animation-delay: 2.15s;
+    opacity: 0;
+}

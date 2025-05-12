@@ -1,0 +1,508 @@
+@charset "UTF-8";
+
+/*-------------------------- 共通 --------------------------*/
+
+.img_sp {
+    display: none;
+}
+
+.topbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 150px;
+}
+
+.topbox .top_img {
+    flex: 0 0 50vw;
+    height: 400px;
+    overflow: hidden;
+}
+
+.topbox .top_img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.topbox .top_text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 400px;
+}
+
+.img_left {
+    flex-direction: row;
+}
+
+.img_left .top_img {
+    margin-left: -10vw;
+}
+
+.img_left .top_text {
+    margin-left: 10%;
+}
+
+.img_right {
+    flex-direction: row-reverse;
+}
+
+.img_right .top_img {
+    margin-right: -10vw;
+}
+
+.img_right .top_text {
+    margin-right: 10%;
+}
+
+.topbox .title {
+    text-align: left;
+}
+
+.topbox .title::after {
+    margin: 8px 0 20px;
+    transform: translateX(1px)
+}
+
+.topbox h3 {
+    font-size: 20px;
+    color: #235028;
+    margin-bottom: 20px;
+}
+
+.topbox p {
+    text-align: justify;
+}
+
+.topbox .top_text .btn {
+    position: absolute;
+    bottom: 0;
+}
+
+/*-------------------------- 個別 --------------------------*/
+
+.kv .top_logo {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+    text-align: center;
+    z-index: 70;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 300px;
+    height: 350px;
+}
+
+.kv .top_logo .shizukuishi {
+    font-family: "Hina Mincho", serif;
+    font-size: 20px;
+    letter-spacing: 0.4em;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.kv .top_logo img {
+    width: auto;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-12%, -50%);
+}
+
+.kv .top_logo .alphabet {
+    font-family: "Sorts Mill Goudy", serif;
+    font-size: 15px;
+    text-align: left;
+    letter-spacing: 0.1em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#hajimeni {
+    scroll-margin-top: 80px;
+}
+
+.onsen_teien {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: -50px;
+    margin-bottom: 150px;
+    overflow: hidden;
+}
+
+.onsen_teien .onsen_teien_box {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.onsen_teien .onsen {
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.onsen_teien .teien {
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: -17%;
+    z-index: 1;
+}
+
+.onsen_teien .onsen_teien_box .circle-img {
+    flex: 0 0 30vw;
+    overflow: hidden;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+.onsen_teien .onsen_teien_box .circle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.onsen_teien .onsen .circle-img {
+    margin-left: -5%;
+    margin-right: 3%;
+}
+
+.onsen_teien .onsen .circle-img img {
+    transform: scale(1.5);
+    object-position: 10% 100%;
+}
+
+.onsen_teien .teien .circle-img {
+    margin-right: -5%;
+    margin-left: 3%;
+}
+
+.onsen_teien .teien .circle-img img {
+    object-position: 80% 100%;
+}
+
+.onsen_teien_text {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.onsen_teien_text h3 {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.onsen_teien_text h3 span {
+    display: inline-block;
+    border-bottom: 1px solid #8B8C87;
+}
+
+.cross-lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    z-index: -20;
+}
+
+  .cross-lines::before,
+  .cross-lines::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-top: 1px solid #8b8c8752;
+    transform-origin: center;
+}
+
+  .cross-lines::before {
+    transform: rotate(10deg);
+}
+
+  .cross-lines::after {
+    transform: rotate(-10deg);
+}
+
+.top_suiu {
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top_blog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+    max-width: 100%;
+}
+
+.top_blog a {
+    display: block;
+    opacity: 1;
+}
+
+.blog_item {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+  
+.blog_item .blog_thumb {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.blog_item .blog_thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.75s ease;
+    transform: scale(1);
+}
+
+.top_suiu a:hover .blog_item .blog_thumb img {
+    transform: scale(1.1);
+}
+
+.blog_item .blog_meta {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 10px;
+}
+
+.blog_item .blog_meta .label {
+    padding: 2px 6px;
+    font-size: 8px;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.label_diary {
+    background-color: #235028;
+}
+
+.label_notice {
+    background-color: #8B8C87;
+}
+
+.label_new {
+    background-color: #A82C4B;
+}
+
+.blog_item h3 {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.top_suiu .btn {
+    margin: 0 auto;
+}
+
+/*---------------------------------------
+スマートフォン
+---------------------------------------*/
+
+@media screen and (max-width: 767px) {
+
+/*-------------------------- 共通 --------------------------*/
+
+.img_pc {
+    display: none;
+}
+
+.img_sp {
+    display: block;
+}
+
+.topbox {
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.top_text {
+    height: auto;
+}
+
+.topbox .top_img {
+    flex: 0 0 90vw;
+    margin-bottom: 20px;
+}
+
+.topbox p {
+    margin-bottom: 70px;
+}
+
+.none_btn p {
+    margin-bottom: 0;
+}
+
+.img_left .top_img {
+    margin-left: -10vw;
+}
+
+.img_right .top_img {
+    margin-right: -10vw;
+}
+
+.topbox .title {
+    text-align: center;
+}
+
+.topbox .title::after {
+    margin: 8px auto 20px;
+    transform: translateX(-1px)
+}
+
+.topbox .top_text .btn {
+    right: 0;
+}
+
+.img_left .top_text {
+    margin-left: 0;
+}
+
+.img_right .top_text {
+    margin-right: 0;
+}
+
+/*-------------------------- 個別 --------------------------*/
+
+.kv .top_logo {
+    width: 180px;
+    height: 220px;
+}
+
+.kv .top_logo .shizukuishi {
+    font-size: 14px;
+}
+
+.kv .top_logo img {
+    width: auto;
+    height: 220px;
+}
+
+.kv .top_logo .alphabet {
+    font-size: 10px;
+}
+
+.kv_img .slide:nth-child(2) {
+    object-position: 90% center;
+}
+.kv_img .slide:nth-child(3) {
+    object-position: 20% center;
+}
+.kv_img .slide:nth-child(6) {
+    object-position: 40% center;
+}
+
+.onsen_teien {
+    margin-top: -10px;
+    margin-bottom: 60px;
+}
+
+.onsen_teien .teien {
+    margin-top: -8%;
+}
+
+.onsen_teien .onsen_teien_box .circle-img {
+    flex: 0 0 50vw;
+}
+
+.onsen_teien .onsen .circle-img {
+    margin-left: -10%;
+    margin-right: 5%;
+}
+
+.onsen_teien .onsen .circle-img img {
+    transform: scale(1.2);
+    object-position: 0 100%;
+}
+
+.onsen_teien .teien .circle-img {
+    margin-right: -10%;
+    margin-left: 5%;
+}
+
+.onsen_teien .teien .circle-img img {
+    object-position: 100% 100%;
+}
+
+.onsen_teien_text h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.onsen_teien_text h3 span {
+    display: inline-block;
+    border-bottom: 1px solid #8B8C87;
+}
+
+.cross-lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+  }
+  
+.cross-lines::before,
+.cross-lines::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-top: 1px solid #8b8c8752;
+    transform-origin: center;
+}
+  
+.cross-lines::before {
+    transform: rotate(10deg);
+}
+  
+.cross-lines::after {
+    transform: rotate(-10deg);
+}
+
+.top_suiu {
+    margin-bottom: 50px;
+}
+
+.top_blog {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.top_blog a:nth-of-type(n+4) {
+    display: none;
+  }
+  
+.blog_item .blog_thumb {
+    height: 200px;
+}
+
+.blog_item .blog_meta {
+    font-size: 12px;
+}
+
+.blog_item .blog_meta .label {
+    padding: 2px 9px;
+    font-size: 9px;
+}
+
+}
